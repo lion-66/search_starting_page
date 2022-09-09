@@ -169,10 +169,14 @@ export default {
                 transition: all 0.3s ease-in-out;
             }
             .ipt::placeholder{
+                transition: .15s;
                 color:#ffffff91
             }
             .ipt:hover::placeholder{
                 color: #000;
+            }
+            .ipt:focus::placeholder {
+              color: #ff000055;
             }
             .ipt:hover{
                 width: 200px;
