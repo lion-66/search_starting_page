@@ -1,6 +1,6 @@
 <template>
    <div class="dateShowTop">
-        <div id="dateShow" @click="showList" v-show="isTime">
+        <div id="dateShow" @click="showSearch" v-show="isTime">
             <span class="big font-thin" >
                 <span>{{nowTime}}</span>
             </span>
@@ -18,13 +18,24 @@ export default {
         }
     },
     computed:{
-    ...mapState(['isTime'])
+    ...mapState(['isTime','isSearch','isShow'])
   },
    methods: {
-    showList(){
-        
+    showSearch(){
+        if(this.isSearch == true){
+            this.updateIsSearch(false)
+            
+        }else{
+             this.updateIsSearch(true)
+        }
+        if(this.isShow == false){
+                this.updateIsShow(true)
+        }else{
+                this.updateIsShow(false)
+            
+        }
     },
-    ...mapMutations(['updateIsTime'])
+    ...mapMutations(['updateIsTime','updateIsSearch','updateIsShow'])
    },
     mounted() {
         const abc = ()=>{

@@ -2,23 +2,24 @@
   <div>
     <img src="./assets/fengjing1.jpeg" alt=""  class="img" :class="{isblur:isShow}">
     <DateShow/>
-    <Search :list="list"/>
+    <Search :list="list" v-if="isSearch"/>
+    <NavList v-else/>
   </div>
 </template>
 <script>
 import DateShow from '@/components/DateShow'
 import Search from '@/components/Search'
+import NavList from '@/components/NavList'
 import {mapState} from 'vuex'
-
 export default {
-  components:{DateShow,Search},
+  components:{DateShow,Search,NavList},
   data() {
     return {
       list:[]
     }
   },
   computed:{
-    ...mapState(['isShow'])
+    ...mapState(['isShow','isSearch'])
   },
   mounted() {
       //  let self = this
@@ -39,7 +40,6 @@ export default {
   margin: 0;
   width: 100%;
   height: 100%;
-  //overflow: hidden;
   box-sizing: border-box;
 }
 a{

@@ -58,30 +58,21 @@ export default {
                jsonp(`http://suggestion.baidu.com/su?wd=${this.content}`, null)
             },
             dianji(){
-                // this.isStop = true;
                 this.updateIsStop(true)
             },
             showIcon(){
-                // this.isShow = true;
                 this.updateIsShow(true)
             },
             showIcons(){
-                // this.isStop = false;
                 this.updateIsStop(false)
-                // this.isShow = false
                  this.updateIsShow(false)
             },
             dianji1(){
-                // this.isShow = true
                  this.updateIsShow(true)
                  this.$refs.search.focus();
-
             },
             showIcons1(){
-                // this.isShow = false
                  this.updateIsShow(false)
-
-
             },
             handleSearch(){
                 window.open(`https://www.baidu.com/s?wd=${this.content}`)
