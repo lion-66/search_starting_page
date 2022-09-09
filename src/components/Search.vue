@@ -181,6 +181,11 @@ export default {
         }
         
     }
+    #search:hover {
+      .ipt::placeholder{
+        color: #000;
+      }
+    }
     .stop{
         width: 460px!important;
         background-color: #eaebec!important;
