@@ -1,7 +1,7 @@
 <template>
    <div class="dateShowTop">
         <div id="dateShow" @click="showList" v-show="isTime">
-            <span class="big font-mono font-thin" >
+            <span class="big font-thin" >
                 <span>{{nowTime}}</span>
             </span>
         </div>

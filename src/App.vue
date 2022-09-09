@@ -61,7 +61,12 @@ a{
 body {
   overflow: hidden;
 }
+//全局字体
+@font-face{
+  font-family: FontStyle;
+  src: url("~@/assets/font/one.woff2");
+}
+*{
+  font-family: FontStyle;
+}
 </style>
-
-
-
