@@ -58,7 +58,9 @@ a{
   transform: scale(1.09);
   filter: blur(10px);
 }
-
+body {
+  overflow: hidden;
+}
 </style>
 
 

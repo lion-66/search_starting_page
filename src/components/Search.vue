@@ -197,8 +197,9 @@ export default {
     .searchList{
         position: absolute;
         top: 50px;
-        left: 40%;
-        width: 250px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 300px;
         height: 270px;
         padding: 10px;
         border-radius: 15px;
