@@ -1,6 +1,6 @@
 <template>
    <div class="dateShowTop">
-        <div id="dateShow" @click="showSearch" v-show="isTime">
+        <div id="dateShow" @click="showSearch" v-show="isTime" tabindex="0">
             <span class="big font-thin" >
                 <span>{{nowTime}}</span>
             </span>
@@ -22,6 +22,7 @@ export default {
   },
    methods: {
     showSearch(){
+        // 判断Search组件是否显示
         if(this.isSearch == true){
             this.updateIsSearch(false)
             
@@ -32,7 +33,20 @@ export default {
                 this.updateIsShow(true)
         }else{
                 this.updateIsShow(false)
+        }
+    },
+    // 判断Search组件是否显示
+    showSearch2(){
+         if(this.isSearch == true){
+            this.updateIsSearch(false)
             
+        }else{
+             this.updateIsSearch(true)
+        }
+        if(this.isShow == false){
+                this.updateIsShow(true)
+        }else{
+                this.updateIsShow(false)
         }
     },
     ...mapMutations(['updateIsTime','updateIsSearch','updateIsShow'])

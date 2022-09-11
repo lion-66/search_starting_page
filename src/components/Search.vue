@@ -75,7 +75,9 @@ export default {
                  this.updateIsShow(false)
             },
             handleSearch(){
-                window.open(`https://www.baidu.com/s?wd=${this.content}`)
+                if (this.content != '') {
+                    window.open(`https://www.baidu.com/s?wd=${this.content}`)
+                }
             },
             ...mapMutations(['updateIsShow','updateIsStop']),
 
