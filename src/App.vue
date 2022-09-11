@@ -1,9 +1,12 @@
 <template>
   <div>
-    <img src="./assets/fengjing1.jpeg" alt=""  class="img" :class="{isblur:isShow}">
+    <img src="./assets/fengjing.jpeg" alt=""  class="img" :class="{isblur:isShow}">
+    <Weather/>
     <DateShow/>
     <Search :list="list" v-if="isSearch"/>
     <NavList v-else/>
+    <Footer/>
+    <index/>
   </div>
 </template>
 <script>
@@ -11,8 +14,11 @@ import DateShow from '@/components/DateShow'
 import Search from '@/components/Search'
 import NavList from '@/components/NavList'
 import {mapState} from 'vuex'
+import Footer from '@/components/Footer.vue'
+import Weather from '@/components/Weather.vue'
+import Index from '@/components/index.vue'
 export default {
-  components:{DateShow,Search,NavList},
+  components:{ DateShow, Search, NavList, Footer, Weather, Index },
   data() {
     return {
       list:[]
@@ -38,8 +44,8 @@ export default {
 *{
   padding: 0;
   margin: 0;
-  width: 100%;
-  height: 100%;
+  // width: 100%;
+  // height: 100%;
   box-sizing: border-box;
 }
 a{

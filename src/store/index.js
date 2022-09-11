@@ -7,6 +7,8 @@ export default createStore({
             isStop:false,
             isTime:true,
             isSearch:true,//显示影藏搜索框
+            isDialog: false,//隐藏常规设置
+            isWallapaer: false,//隐藏更换壁纸
   },
   getters: {
   },
@@ -23,6 +25,12 @@ export default createStore({
     updateIsSearch(state,value){
       state.isSearch = value
 
+    },
+    updateIsDialog(state, value) {
+      state.isDialog = value;
+    },
+    updateIsWallapaer(state, value) {
+      state.isWallapaer = value;
     },
   },
   actions: {

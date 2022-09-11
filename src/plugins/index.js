@@ -1,6 +1,6 @@
-import {  Search  } from 'vant';
+import {  Search ,Popover ,Toast  } from 'vant';
 let plugins = [
-    Search 
+    Search ,Popover ,Toast
 ]
 export default function getVant(app){
     plugins.forEach((items)=>{
