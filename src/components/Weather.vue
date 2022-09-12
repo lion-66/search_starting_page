@@ -39,10 +39,15 @@ export default {
 };
 </script>
 
-<style scoped>
-   .weather{
-    width: 18%;
+<style>
+   .weather {
+     width: 18%;
+     position: absolute;
+     top: 10px;
+     left: 10px;
+     z-index: 9999;
+   }
+   #weather-view-he {
+     height: auto!important;
    }
 </style>
-
-
