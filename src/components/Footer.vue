@@ -93,7 +93,7 @@ export default {
   width: 100%;
   height: 75px;
   position: absolute;
-  bottom: 125px;
+  bottom: 7%;
   left: 50%;
   transform: translateX(-50%);
   .yiyan-box {

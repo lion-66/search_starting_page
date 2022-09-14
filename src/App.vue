@@ -5,6 +5,7 @@
     <DateShow/>
     <Search :list="list" v-if="isSearch"/>
     <NavList v-else/>
+    <AddUrl/>
     <Footer/>
     <index/>
   </div>
@@ -13,12 +14,13 @@
 import DateShow from '@/components/DateShow'
 import Search from '@/components/Search'
 import NavList from '@/components/NavList'
+import AddUrl from '@/components/AddUrl'
 import {mapState} from 'vuex'
 import Footer from '@/components/Footer.vue'
 import Weather from '@/components/Weather.vue'
 import Index from '@/components/index.vue'
 export default {
-  components:{ DateShow, Search, NavList, Footer, Weather, Index },
+  components:{ DateShow, Search, NavList,AddUrl, Footer, Weather, Index },
   data() {
     return {
       list:[]
@@ -44,8 +46,6 @@ export default {
 *{
   padding: 0;
   margin: 0;
-  // width: 100%;
-  // height: 100%;
   box-sizing: border-box;
 }
 a{
@@ -66,6 +66,8 @@ a{
 }
 body {
   overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 //全局字体
 @font-face{
