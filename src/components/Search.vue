@@ -14,7 +14,6 @@
                 @click="showIcon"
                 @blur="showIcons"
                 ref="search"
-               
                 >
             </div>
             <div class="right" v-show="isShow">
@@ -41,7 +40,6 @@
 <script>
 import jsonp from 'jsonp'
 import {mapMutations,mapState} from 'vuex'
-// import searchList from '@/components/searchList'
 export default {
     data() {
         return {
@@ -49,10 +47,6 @@ export default {
         }
     },
     props:['list'],
-   
-    mounted() {
-        
-    },
     methods: {
         searchContent(){
                jsonp(`http://suggestion.baidu.com/su?wd=${this.content}`, null)
@@ -119,34 +113,18 @@ export default {
             position: relative;
         }
         .left,.right{
-            width: 25px;
-            height: 25px;
-            padding-top: 3px;
-            padding-left: 3px;
-            transition: all 1s ease-in-out;
-        }
-        .left:hover::before{
-            content: '';
-            display: block;
-            position: absolute;
-            top:3px;
-            left: 31px;
-            width: 35px;
-            height: 35px;
-            background-color: #fff;
+            width: 38px;
+            height: 38px;
             border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all .2s ease-in-out;
         }
-        .right:hover::before{
-            content: '';
-            display: block;
-            position: absolute;
-            top:3px;
-            right: 30px;
-            width: 35px;
-            height: 35px;
-            background-color: #fff;
-            border-radius: 50%;
+        .left:hover,.right:hover{
+          background-color: #fff;
         }
+
         .search-box{
             width: 200px;
             height: 30px;
