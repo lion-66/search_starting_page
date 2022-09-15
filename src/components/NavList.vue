@@ -36,11 +36,11 @@ export default {
                 {Url:'https://github.com',name:'GitHub',icon:'#icon-GitHub'},
                 {Url:'https://music.163.com/',name:'网易云音乐',icon:'#icon-wangyiyunyinle'},
                 {Url:'https://cn.vuejs.org/',name:'Vue',icon:'#icon-Vue'},
-                {Url:'https://www.douyin.com/',name:'抖音',icon:'#icon-Vue'},
-                {Url:'https://www.taobao.com/',name:'淘宝',icon:'#icon-Vue'},
-                {Url:'https://www.jd.com/',name:'京东',icon:'#icon-Vue'},
-                {Url:'https://www.amap.com/',name:'高德地图',icon:'#icon-Vue'},
-                {Url:'https://www.xuexi.cn/',name:'学习强国',icon:'#icon-Vue'},
+                {Url:'https://www.douyin.com/',name:'抖音',icon:'#icon-douyin'},
+                {Url:'https://www.taobao.com/',name:'淘宝',icon:'#icon-shejiaotubiao-08'},
+                {Url:'https://www.jd.com/',name:'京东',icon:'#icon-jingdong_'},
+                {Url:'https://www.amap.com/',name:'高德地图',icon:'#icon-mapOfGaud'},
+                {Url:'https://www.xuexi.cn/',name:'学习强国',icon:'#icon-xuexi'},
             ]
         }
     },

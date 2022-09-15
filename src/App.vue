@@ -8,6 +8,8 @@
     <AddUrl/>
     <Footer/>
     <index/>
+    <User/>
+    <!-- <Login/> -->
   </div>
 </template>
 <script>
@@ -19,8 +21,10 @@ import {mapState} from 'vuex'
 import Footer from '@/components/Footer.vue'
 import Weather from '@/components/Weather.vue'
 import Index from '@/components/index.vue'
+import User from '@/components/User.vue'
+// import Login from '@/views/Login.vue'
 export default {
-  components:{ DateShow, Search, NavList,AddUrl, Footer, Weather, Index },
+  components:{ DateShow, Search, NavList,AddUrl, Footer, Weather, Index,User },
   data() {
     return {
       list:[]
