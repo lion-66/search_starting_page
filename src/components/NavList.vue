@@ -98,6 +98,11 @@ export default {
                 display: flex;
                 justify-content: center;
                 text-align: center;
+                .contentListChild:hover {
+                    .icon {
+                        fill: #000;
+                    }
+                }
                 .contentListChild{
                     position: relative;
                     width: 90px;
@@ -109,7 +114,7 @@ export default {
                     justify-content: space-around;
                     flex-direction: column;
                     align-items: center;
-
+                    transition: .3s;
                     span{
                         color: #000;
                     }
@@ -151,22 +156,18 @@ export default {
             }
            
             .middle{
-                // width: 90px;
-                // height: 90px;
-                // border-radius: 10px;
                 background-color: #fff;
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                cursor: pointer;
                 .icon{
                     width: 50px;
                     height: 50px;
                     fill: #a3a2a2;
                 }
             }
-            .middle>.icon:hover{
-                    fill: #000;
-            }
+            
         }
         .appletList::-webkit-scrollbar{
             display: none;
