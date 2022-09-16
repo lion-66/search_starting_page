@@ -1,9 +1,9 @@
 <template>
   <div>
-    <img src="./assets/fengjing.jpeg" alt=""  class="img" :class="{isblur:isShow}">
+    <img :class="{isblur:isShow}" alt="" class="img" src="./assets/fengjing.jpeg">
     <Weather/>
     <DateShow/>
-    <Search :list="list" v-if="isSearch"/>
+    <Search v-if="isSearch" :list="list"/>
     <NavList v-else/>
     <AddUrl/>
     <Footer/>
@@ -24,38 +24,40 @@ import Index from '@/components/index.vue'
 import User from '@/components/User.vue'
 // import Login from '@/views/Login.vue'
 export default {
-  components:{ DateShow, Search, NavList,AddUrl, Footer, Weather, Index,User },
+  components: {DateShow, Search, NavList, AddUrl, Footer, Weather, Index, User},
   data() {
     return {
-      list:[]
+      list: []
     }
   },
-  computed:{
-    ...mapState(['isShow','isSearch'])
+  computed: {
+    ...mapState(['isShow', 'isSearch'])
   },
   mounted() {
-      //  let self = this
-       window.baidu = {
-         sug: (data) => {
-          //  console.log(data.s);
-          // console.log(self)
-           this.list = data.s;
-          }
+    //  let self = this
+    window.baidu = {
+      sug: (data) => {
+        //  console.log(data.s);
+        // console.log(self)
+        this.list = data.s;
       }
+    }
   },
 
 }
 </script>
 <style lang="less">
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
-a{
+
+a {
   color: #000;
 }
-.img{
+
+.img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -64,21 +66,25 @@ a{
   position: absolute;
   transition: all .3s;
 }
-.isblur{
+
+.isblur {
   transform: scale(1.09);
   filter: blur(10px);
 }
+
 body {
   overflow: hidden;
   width: 100%;
   height: 100%;
 }
+
 //全局字体
-@font-face{
+@font-face {
   font-family: FontStyle;
   src: url("~@/assets/font/one.woff2");
 }
-*{
+
+* {
   font-family: FontStyle;
 }
 </style>

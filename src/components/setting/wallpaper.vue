@@ -1,7 +1,7 @@
 <template>
-  <div class="bgallapaer" v-show="isWallapaer">
+  <div v-show="isWallapaer" class="bgallapaer">
     <span class="bgClose" @click="CloseWallpaper">
-      <van-icon name="cross" size="25" color="rgba(0,0,0,.5)" />
+      <van-icon color="rgba(0,0,0,.5)" name="cross" size="25"/>
     </span>
     <div class="bgTop"></div>
     <div class="bgContent">
@@ -19,8 +19,9 @@
 </template>
 
 <script>
-import { ref } from "vue";
-import { mapMutations, mapState } from "vuex";
+import {ref} from "vue";
+import {mapMutations, mapState} from "vuex";
+
 export default {
   setup() {
     const checked = ref(false);
@@ -28,10 +29,10 @@ export default {
       checked,
     };
   },
-  
- 
+
+
   computed: {
-    
+
     ...mapState(["isWallapaer"]),
   },
 
@@ -61,6 +62,7 @@ export default {
   transition: 0.25s;
   /* display: none; */
 }
+
 .bgClose {
   z-index: 99;
   position: absolute;
@@ -74,28 +76,34 @@ export default {
   text-align: center;
   line-height: 50px;
 }
+
 .bgClose:hover {
   background-color: rgb(0, 0, 0, 0.08);
 }
+
 .bgTop {
   padding: 13px 20px;
   width: 600px;
   height: 50px;
 }
+
 .bgContent {
   padding: 0 30px 30px;
 }
+
 .bgTitle {
   padding-bottom: 30px;
   color: black;
   font-size: 26px;
 }
+
 .bgGroupOne {
   margin-left: 10px;
   padding-bottom: 5px;
   font-weight: bold;
   font-size: 14px;
 }
+
 .bgSetGroup {
   padding-left: 10px;
   width: 540px;
@@ -104,6 +112,7 @@ export default {
   flex-wrap: wrap;
   /* margin-top: 8px; */
 }
+
 .bgPreviewBox {
   margin-right: 8px;
   margin-bottom: 8px;
