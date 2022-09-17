@@ -29,58 +29,6 @@
 import {mapMutations, mapState} from 'vuex';
 
 export default {
-<<<<<<< HEAD
-    data() {
-        return {
-            arrList:[
-                {Url:'https://www.baidu.com/s',name:'百度',icon:'#icon-baidu'},
-                {Url:'https://www.bilibili.com',name:'B站',icon:'#icon-bilibili'},
-                {Url:'https://github.com',name:'GitHub',icon:'#icon-GitHub'},
-                {Url:'https://music.163.com/',name:'网易云音乐',icon:'#icon-wangyiyunyinle'},
-                {Url:'https://cn.vuejs.org/',name:'Vue',icon:'#icon-Vue'},
-                {Url:'https://www.douyin.com/',name:'抖音',icon:'#icon-douyin'},
-                {Url:'https://www.taobao.com/',name:'淘宝',icon:'#icon-shejiaotubiao-08'},
-                {Url:'https://www.jd.com/',name:'京东',icon:'#icon-jingdong_'},
-                {Url:'https://www.amap.com/',name:'高德地图',icon:'#icon-mapOfGaud'},
-                {Url:'https://www.xuexi.cn/',name:'学习强国',icon:'#icon-xuexi'},
-            ]
-        }
-    },
-    methods: {
-        listCount(){
-            if(this.isOff==false){
-                this.updateIsOff(true)
-            }
-        },
-        delet(){
-           if(this.isDel == false){
-             this.updateIsDel(true)
-           }else
-           {
-             this.updateIsDel(false)
-           }
-        },
-        handleDel(index) {
-            if(index >= this.arrList.length) {
-                console.log('删vuex的，索引为 ', index - this.arrList.length)
-                this.$store.commit('deleteNameOrhttps', index - this.arrList.length)
-            } else {
-                console.log('删组件的，索引为 ', index)
-                this.arrList.splice(index, 1)
-            }
-        },
-        ...mapMutations(['updateIsOff','updateNameOrhttps','updateIsDel'])
-    },
-    computed:{
-        getList(){
-            return [...this.arrList,...this.nameOrhttps]
-        },
-        ...mapState(['isOff','nameOrhttps','isDel'])
-    },
-    // mounted(){
-    //     console.log(this.getList);
-    // }
-=======
   data() {
     return {
       arrList: [
@@ -127,7 +75,7 @@ export default {
     },
     ...mapState(['isOff', 'nameOrhttps', 'isDel'])
   }
->>>>>>> 4aa30632db0780377de6e76c4f309b6b2935719e
+
 }
 </script>
 

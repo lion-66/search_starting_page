@@ -22,7 +22,7 @@ name:'Login'
         height: 100%;
         color: #000;
         background-color: #fff;
-        z-index: 99;
+        z-index: 999;
         .icon{
           width: 30px;
           height: 30px;

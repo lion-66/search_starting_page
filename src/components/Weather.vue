@@ -40,28 +40,15 @@ export default {
 </script>
 
 <style>
-<<<<<<< HEAD
-   .weather {
-     width: 18%;
-     position: absolute;
-     top: 10px;
-     left: 10px;
-     z-index: 9;
-   }
-   #weather-view-he {
-     height: auto!important;
-   }
-=======
 .weather {
   width: 18%;
   position: absolute;
   top: 10px;
   left: 10px;
-  z-index: 9999;
+  z-index: 5;
 }
 
 #weather-view-he {
   height: auto !important;
 }
->>>>>>> 4aa30632db0780377de6e76c4f309b6b2935719e
 </style>
