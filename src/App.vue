@@ -9,7 +9,7 @@
     <Footer/>
     <index/>
     <User/>
-    <!-- <Login/> -->
+    <router-view></router-view>
   </div>
 </template>
 <script>
@@ -22,7 +22,6 @@ import Footer from '@/components/Footer.vue'
 import Weather from '@/components/Weather.vue'
 import Index from '@/components/index.vue'
 import User from '@/components/User.vue'
-// import Login from '@/views/Login.vue'
 export default {
   components:{ DateShow, Search, NavList,AddUrl, Footer, Weather, Index,User },
   data() {

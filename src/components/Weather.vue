@@ -45,7 +45,7 @@ export default {
      position: absolute;
      top: 10px;
      left: 10px;
-     z-index: 9999;
+     z-index: 9;
    }
    #weather-view-he {
      height: auto!important;

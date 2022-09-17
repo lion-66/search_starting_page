@@ -1,10 +1,12 @@
 <template>
     <div id="User">
-        <div class="users">
-          <svg class="icon" aria-hidden="true" @click="$router.push('/Login')">
-            <use xlink:href="#icon-yonghu"></use>
-          </svg>
-        </div>
+        <router-link to="/Login">
+          <div class="users">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-yonghu"></use>
+            </svg>
+         </div>
+        </router-link>
     </div>
 </template>
 

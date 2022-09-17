@@ -1,6 +1,9 @@
 <template>
-  <div>
-    登录
+  <div id="login">
+      <svg class="icon" aria-hidden="true" @click="$router.go(-1)">
+        <use xlink:href="#icon-zuojiantou-"></use>
+      </svg>
+      
   </div>
 </template>
 
@@ -10,11 +13,21 @@ name:'Login'
 }
 </script>
 
-<style leng='less' scoped>
-    div{
+<style lang="less" scoped>
+    #login{
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
-         color: #fff;
-         background-color: #fff;
+        color: #000;
+        background-color: #fff;
+        z-index: 99;
+        .icon{
+          width: 30px;
+          height: 30px;
+          cursor: pointer;
+        }
+        
     }
 </style>

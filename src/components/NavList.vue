@@ -74,7 +74,10 @@ export default {
             return [...this.arrList,...this.nameOrhttps]
         },
         ...mapState(['isOff','nameOrhttps','isDel'])
-    }
+    },
+    // mounted(){
+    //     console.log(this.getList);
+    // }
 }
 </script>
 
