@@ -6,8 +6,8 @@
 
 <script>
 export default {
-    name:'weather',
-    //使用和风天气插件
+  name: 'weather',
+  //使用和风天气插件
   created() {
     window.WIDGET = {
       CONFIG: {
@@ -32,14 +32,15 @@ export default {
       },
     };
     var script = document.createElement('script');
-      script.type = 'text/javascript';
-      script.src= "https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0";
-      document.getElementsByTagName('head')[0].appendChild(script);
+    script.type = 'text/javascript';
+    script.src = "https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0";
+    document.getElementsByTagName('head')[0].appendChild(script);
   },
 };
 </script>
 
 <style>
+<<<<<<< HEAD
    .weather {
      width: 18%;
      position: absolute;
@@ -50,4 +51,17 @@ export default {
    #weather-view-he {
      height: auto!important;
    }
+=======
+.weather {
+  width: 18%;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 9999;
+}
+
+#weather-view-he {
+  height: auto !important;
+}
+>>>>>>> 4aa30632db0780377de6e76c4f309b6b2935719e
 </style>
