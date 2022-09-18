@@ -10,7 +10,9 @@
           
         </van-grid>
         <template #reference>
-          <van-icon color="rgba(255, 255, 255, 0.5)" name="setting" size="24"/>
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-shezhitianchong"></use>
+            </svg>
         </template>
       </van-popover>
     </div>
@@ -51,20 +53,30 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 .index {
   animation: fadeIn 0.25s;
   position: absolute;
-  top: 3.5%;
-  right: 50px;
+  top: 3.2%;
+  right: 3%;
   font-size: 0;
   transition: 0.25s;
   cursor: pointer;
+      .icon{
+    width: 27px;
+    height: 27px;
+    fill: rgba(255, 255, 255, 0.505);
+    }
 }
 
 .index:hover {
   transform: rotate(60deg);
   color: #fff;
+  .icon{
+    width: 25px;
+    height: 25px;
+    fill: #fff;
+    }
 }
 
 </style>
