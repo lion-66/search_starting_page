@@ -6,11 +6,11 @@
           <van-grid-item text="常规设置" @click="ShowDialog"/>
           <van-grid-item text="更换壁纸" @click="ShowWallapaer"/>
           <van-grid-item text="联系我们" @click="showPopover = false"/>
-          <van-grid-item text="反馈" @click="showPopover = false"/>
-          <van-grid-item text="浏览器设置" @click="showPopover = false"/>
+          <van-grid-item text="bug反馈" @click="showPopover = false"/>
+          
         </van-grid>
         <template #reference>
-          <van-icon color="rgba(255,255,255,.35)" name="setting" size="22"/>
+          <van-icon color="rgba(255, 255, 255, 0.5)" name="setting" size="24"/>
         </template>
       </van-popover>
     </div>
@@ -54,10 +54,9 @@ export default {
 <style scoped>
 .index {
   animation: fadeIn 0.25s;
-  position: fixed;
-  top: 15px;
-  right: 40px;
-  padding: 10px;
+  position: absolute;
+  top: 3.5%;
+  right: 50px;
   font-size: 0;
   transition: 0.25s;
   cursor: pointer;
@@ -65,7 +64,7 @@ export default {
 
 .index:hover {
   transform: rotate(60deg);
-
+  color: #fff;
 }
 
 </style>

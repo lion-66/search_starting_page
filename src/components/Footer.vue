@@ -1,6 +1,8 @@
 <template>
   <div class="yiyan">
-    <div class="yiyan-box">
+    <div class="yiyan-box"
+    @contextmenu.prevent="yiyanHandle"
+      title="点击右键切换">
       <span class="yiyan-mask"></span>
       <div class="yiyan-text">「 {{ yiyan.hitokoto }} 」</div>
       <div class="yiyan-from">—— {{ yiyan.from_who }} / {{ yiyan.from }}</div>
@@ -61,6 +63,9 @@ export default {
 
   //方法集合
   methods: {
+    yiyanHandle() {
+      this.getYiyan();
+    },
     //获取一言
     getYiyan() {
       axios

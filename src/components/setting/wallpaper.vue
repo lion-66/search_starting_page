@@ -1,38 +1,58 @@
 <template>
   <div v-show="isWallapaer" class="bgallapaer">
     <span class="bgClose" @click="CloseWallpaper">
-      <van-icon color="rgba(0,0,0,.5)" name="cross" size="25"/>
+      <van-icon color="rgba(0,0,0,.5)" name="cross" size="25" />
     </span>
     <div class="bgTop"></div>
     <div class="bgContent">
       <div class="bgTitle">壁纸偏好</div>
-      <div class="bgGroupOne">默认</div>
-      <div class="bgSetGroup">
-        <div class="bgPreviewBox"></div>
-        <div class="bgPreviewBox"></div>
-        <div class="bgPreviewBox"></div>
-        <div class="bgPreviewBox"></div>
-        <div class="bgPreviewBox"></div>
+      <div class="bgGroupOne">默认壁纸</div>
+      <div v-for="(item, index) of dataList" :key="index" class="bgSetGroup">
+        <div v-for="(row, index) of item.data" :key="index" class="bgBox">
+          <div @click="selWallpaper(row, 0)" class="wallpaper-item">
+            <img class="wallpaper-img" :src="row.src" />
+          </div>
+        </div>
+      </div>
+      <div class="bgGroupOne">动态壁纸</div>
+      <div
+        :span="8"
+        v-for="(row, index) of videoList"
+        :key="index"
+        class="bgSetGroup"
+      >
+        <div class="bgBox" @click="selWallpaper(row, 2)" >
+          <div class="wallpaper-item">
+          <video :alt="row.title" :src="row.src" class="wallpaper-img"></video>
+        </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import {ref} from "vue";
-import {mapMutations, mapState} from "vuex";
+import { mapMutations, mapState } from "vuex";
 
+import { videoList, imgList } from "@/wallpaperApi";
 export default {
-  setup() {
-    const checked = ref(false);
+  data() {
     return {
-      checked,
+      dataList: [
+        {
+          data: imgList,
+        },
+      ],
+      imgList: imgList,
+      videoList: videoList,
+      activeSrc: "",
     };
   },
-
+  mounted() {
+    this.activeSrc = this.$local.get("wallpaper").src;
+  },
 
   computed: {
-
     ...mapState(["isWallapaer"]),
   },
 
@@ -40,7 +60,11 @@ export default {
     CloseWallpaper() {
       this.updateIsWallapaer(false);
     },
-
+    selWallpaper(row, type) {
+      this.activeSrc = row.src;
+      this.$store.commit("setWallpaper", row);
+      console.log(this.activeSrc);
+    },
     ...mapMutations(["updateIsWallapaer"]),
   },
 };
@@ -107,10 +131,8 @@ export default {
 .bgSetGroup {
   padding-left: 10px;
   width: 540px;
-  height: 200px;
   display: flex;
   flex-wrap: wrap;
-  /* margin-top: 8px; */
 }
 
 .bgPreviewBox {
@@ -121,5 +143,28 @@ export default {
   border-radius: 6px;
   overflow: hidden;
   background-color: aquamarine;
+}
+.wallpaper-img {
+  overflow: hidden;
+  width: 100%;
+  object-fit: cover;
+  height: 90px;
+  transition: 0.2s;
+  display: block;
+
+}
+.wallpaper-img:hover{
+  transform: scale(1.15);
+  transition: 1s
+}
+.wallpaper-item{
+  overflow: hidden;
+  border-radius: 5px;
+}
+.bgBox {
+  width: 33.3%;
+  overflow: auto;
+  cursor: pointer;
+  padding: 5px 5px 5px 5px;
 }
 </style>
