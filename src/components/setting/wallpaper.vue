@@ -15,16 +15,20 @@
         </div>
       </div>
       <div class="bgGroupOne">动态壁纸</div>
-      <div
-        :span="8"
-        v-for="(row, index) of videoList"
-        :key="index"
-        class="bgSetGroup"
-      >
-        <div class="bgBox" @click="selWallpaper(row, 2)" >
+      <div class="bgSetGroup">
+        <div
+          class="bgBox"
+          @click="selWallpaper(row, 2)"
+          v-for="(row, index) of videoList"
+          :key="index"
+        >
           <div class="wallpaper-item">
-          <video :alt="row.title" :src="row.src" class="wallpaper-img"></video>
-        </div>
+            <video
+              :alt="row.title"
+              :src="row.src"
+              class="wallpaper-img"
+            ></video>
+          </div>
         </div>
       </div>
     </div>
@@ -151,13 +155,12 @@ export default {
   height: 90px;
   transition: 0.2s;
   display: block;
-
 }
-.wallpaper-img:hover{
+.wallpaper-img:hover {
   transform: scale(1.15);
-  transition: 1s
+  transition: 1s;
 }
-.wallpaper-item{
+.wallpaper-item {
   overflow: hidden;
   border-radius: 5px;
 }

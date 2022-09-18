@@ -3,6 +3,9 @@
     <video
       v-if="wallpaper.type == 2"
       class="video"
+      autoplay="true"
+      loop="true"
+      muted="true"
       :src="wallpaper.src"
     ></video>
     <img
@@ -88,7 +91,8 @@ a {
   color: #000;
 }
 
-.img ,.video{
+.img,
+.video {
   width: 100%;
   height: 100%;
   object-fit: cover;
