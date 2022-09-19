@@ -53,15 +53,15 @@ export default {
   z-index: 100;
   width: 600px;
   height: 500px;
-  top: calc(50% - 250px);
-  left: calc(50% - 300px);
+  top: 80%;
+  left: -1000%;
   background-color: rgb(245, 245, 245);
   font-size: small;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: rgb(0 0 0 / 5%) 0 10px 20px;
   transition: 0.25s;
-  /* display: none; */
+  display: block;
 
 }
 

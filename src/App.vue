@@ -21,15 +21,12 @@
     <NavList v-else />
     <AddUrl />
     <Footer />
-    <index />
-
-    <User />
+    <UserOrIndex/>
     <router-view></router-view>
   </div>
 </template>
 <script>
 import { imgList, videoList } from "@/wallpaperApi";
-
 import DateShow from "@/components/DateShow";
 import Search from "@/components/Search";
 import NavList from "@/components/NavList";
@@ -37,8 +34,7 @@ import AddUrl from "@/components/AddUrl";
 import { mapState } from "vuex";
 import Footer from "@/components/Footer.vue";
 import Weather from "@/components/Weather.vue";
-import Index from "@/components/index.vue";
-import User from "@/components/User.vue";
+import UserOrIndex from "@/components/UserOrIndex.vue";
 export default {
   components: {
     DateShow,
@@ -47,8 +43,7 @@ export default {
     AddUrl,
     Footer,
     Weather,
-    Index,
-    User,
+   UserOrIndex
   },
   data() {
     return {

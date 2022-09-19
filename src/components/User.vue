@@ -22,7 +22,7 @@ export default {
   height: 30px;
   position: absolute;
   top: 3.1%;
-  right: 7%;
+  right: 60%;
   cursor: pointer;
 
   .users {
