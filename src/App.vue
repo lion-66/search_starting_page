@@ -15,12 +15,12 @@
       class="img"
       :class="{ isblur: isShow }"
     />
-    <Weather />
+    <Weather v-if="weather"/>
     <DateShow />
     <Search v-if="isSearch" :list="list" />
     <NavList v-else />
     <AddUrl />
-    <Footer />
+    <Footer v-if="yiyan"/>
     <index />
 
     <User />
@@ -62,6 +62,12 @@ export default {
       let wallpaper = this.videoList[0];
       wallpaper.type = 2;
       return this.$store.state.wallpaper || wallpaper;
+    },
+    yiyan() {
+      return this.$store.state.setContent.yiyan;
+    },
+    weather(){
+      return this.$store.state.setContent.weather;
     },
     ...mapState(["isShow", "isSearch"]),
   },

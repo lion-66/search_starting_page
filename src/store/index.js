@@ -1,6 +1,11 @@
 import { createStore } from "vuex";
 import local from "@/localStrong";
 
+const setContent = {
+  yiyan:true,//是否显示一言
+  weather:true//是否显示和风天气
+}
+
 export default createStore({
   state: {
     // 组件显示
@@ -14,6 +19,7 @@ export default createStore({
     isDel: false, //显示或者隐藏删除图标
     nameOrhttps: [], //接用户添加的数据 []
     wallpaper: {}, //存储壁纸
+    setContent: setContent, //引入设置内容
   },
   getters: {},
   mutations: {
@@ -52,7 +58,10 @@ export default createStore({
     deleteNameOrhttps(state, index) {
       state.nameOrhttps.splice(index, 1);
     },
-
+    setSetContent(state, val) {
+      state.setContent = val || setContent
+      local.set("setContent", state.setContent);
+    },
     setWallpaper(state, val) {
       state.wallpaper = val;
       local.set("wallpaper", val);
@@ -60,11 +69,11 @@ export default createStore({
     },
   },
   actions: {
-    //保存配置（壁纸）
+    //保存配置
     initSetting(context) {
       const state = context.state;
       state.wallpaper = local.get("wallpaper") || "";
-    //   state.setContent = local.get("setContent") || setContent;
+      state.setContent = local.get("setContent") || setContent;
     },
   },
   modules: {},

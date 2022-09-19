@@ -10,12 +10,16 @@
         <div class="dGroupOne">搜索</div>
         <div class="dSetGroup">
           <div class="dOptBox">
-            <span class="dOptCaption">清空搜索历史</span>
-            <van-switch v-model="checked" size="20px"/>
+            <span class="dOptCaption">深色模式</span>
+            <van-switch v-model="checkedone" size="20px" @click="changeTheme(checkedone)"/>
           </div>
           <div class="dOptBox">
-            <span class="dOptCaption">清空搜索历史</span>
-            <van-switch v-model="checked" size="20px"/>
+            <span class="dOptCaption" target="_blank">底部显示名言名句</span>
+            <van-switch size="20px" v-model="yiyan" />
+          </div>
+          <div class="dOptBox">
+            <span class="dOptCaption" target="_blank">显示和风天气</span>
+            <van-switch size="20px" v-model="weather" />
           </div>
         </div>
       </div>
@@ -35,6 +39,28 @@ export default {
     };
   },
   computed: {
+    yiyan: {
+      get() {
+        return this.$store.state.setContent.yiyan;
+      },
+      set(val) {
+        let setContent = this.$store.state.setContent || {};
+        setContent.yiyan = val;
+        this.$store.commit("setSetContent", setContent);
+      },
+    },
+    weather: {
+      get() {
+        return this.$store.state.setContent.weather;
+        
+      },
+      set(val) {
+        let setContent = this.$store.state.setContent || {};
+        setContent.weather = val;
+        console.log(this.$store.state.setContent.weather)
+        this.$store.commit("setSetContent", setContent);
+      },
+    },
     ...mapState(['isDialog'])
   },
   methods: {

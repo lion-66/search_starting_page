@@ -78,17 +78,17 @@ export default {
 .bgallapaer {
   position: absolute;
   z-index: 100;
-  width: 600px;
+  overflow: auto;
   height: 500px;
   top: calc(50% - 250px);
   left: calc(50% - 300px);
   background-color: rgb(245, 245, 245);
   font-size: small;
   border-radius: 10px;
-  overflow: hidden;
+  /* overflow: hidden; */
   box-shadow: rgb(0 0 0 / 5%) 0 10px 20px;
   transition: 0.25s;
-  /* display: none; */
+  
 }
 
 .bgClose {
