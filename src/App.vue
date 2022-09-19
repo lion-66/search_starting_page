@@ -1,7 +1,7 @@
 <template>
   <div>
     <video
-      v-if="wallpaper.type == 2"
+      v-if="wallpaper.src.slice(-4) === '.mp4'"
       class="video"
       autoplay="true"
       loop="true"
