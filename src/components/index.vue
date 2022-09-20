@@ -5,7 +5,7 @@
         <van-grid clickable column-num="1" style="width: 120px">
           <van-grid-item text="常规设置" @click="ShowDialog"/>
           <van-grid-item text="更换壁纸" @click="ShowWallapaer"/>
-          <van-grid-item text="联系我们" @click="showPopover = false"/>
+          <van-grid-item text="联系我们" @click="ShowContact"/>
           <van-grid-item text="bug反馈" @click="showPopover = false"/>
           
         </van-grid>
@@ -16,16 +16,16 @@
         </template>
       </van-popover>
     </div>
-    <Tool/>
-    <Wallpaper/>
+    <!-- <Tool/>
+    <Wallpaper/> -->
   </div>
 </template>
 
 <script>
 import {ref} from "vue";
 import {mapMutations, mapState} from "vuex";
-import Tool from "./setting/tool.vue";
-import Wallpaper from "./setting/wallpaper.vue";
+// import Tool from "@/components/tool.vue";
+// import Wallpaper from "@/components/wallpaper.vue";
 
 export default {
   setup() {
@@ -35,7 +35,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(["isDialog", "isWallapaer"]),
+    ...mapState(["isDialog", "isWallapaer","isContact"]),
   },
 
   methods: {
@@ -47,9 +47,13 @@ export default {
       this.updateIsWallapaer(true);
       this.showPopover = false;
     },
-    ...mapMutations(["updateIsDialog", "updateIsWallapaer"]),
+    ShowContact(){
+      this.updateIsContact(true);
+      this.showPopover = false;
+    },
+    ...mapMutations(["updateIsDialog", "updateIsWallapaer","updateIsContact"]),
   },
-  components: {Tool, Wallpaper},
+  // components: {Tool, Wallpaper},
 };
 </script>
 

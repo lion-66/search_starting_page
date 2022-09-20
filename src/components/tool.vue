@@ -2,17 +2,24 @@
   <div class="tool-box">
     <div v-show="isDialog" class="dialog">
       <span class="dClose" @click="CloseDialog">
-        <van-icon color="rgba(0,0,0,.5)" name="cross" size="25"/>
+        <van-icon color="rgba(0,0,0,.5)" name="cross" size="25" />
       </span>
       <div class="dTop"></div>
       <div class="dContent">
         <div class="dTitle">常规设置</div>
-        <div class="dGroupOne">搜索</div>
+        <div class="dGroupOne">主题</div>
         <div class="dSetGroup">
           <div class="dOptBox">
             <span class="dOptCaption">深色模式</span>
-            <van-switch v-model="checkedone" size="20px" @click="changeTheme(checkedone)"/>
+            <van-switch
+              v-model="checked"
+              size="20px"
+              
+            />
           </div>
+        </div>
+        <div class="dGroupOne">通用</div>
+        <div class="dSetGroup">
           <div class="dOptBox">
             <span class="dOptCaption" target="_blank">底部显示名言名句</span>
             <van-switch size="20px" v-model="yiyan" />
@@ -28,14 +35,14 @@
 </template>
 
 <script>
-import {ref} from "vue";
-import {mapMutations, mapState} from 'vuex'
+import { ref } from "vue";
+import { mapMutations, mapState } from "vuex";
 
 export default {
   setup() {
     const checked = ref(false);
     return {
-      checked
+      checked,
     };
   },
   computed: {
@@ -52,43 +59,42 @@ export default {
     weather: {
       get() {
         return this.$store.state.setContent.weather;
-        
       },
       set(val) {
         let setContent = this.$store.state.setContent || {};
         setContent.weather = val;
-        console.log(this.$store.state.setContent.weather)
+        console.log(this.$store.state.setContent.weather);
         this.$store.commit("setSetContent", setContent);
       },
     },
-    ...mapState(['isDialog'])
+    ...mapState(["isDialog"]),
   },
   methods: {
     CloseDialog() {
       this.updateIsDialog(false);
     },
-    ...mapMutations(['updateIsDialog']),
-  }
+    ...mapMutations(["updateIsDialog"]),
+  },
 };
 </script>
 
 <style lang="css">
-
+  
 .dialog {
   position: absolute;
   z-index: 100;
   width: 600px;
   height: 500px;
+  position: absolute;
   top: calc(50% - 250px);
-  left: calc(50% - 300px);
+    left: calc(50% - 300px);
   background-color: rgb(245, 245, 245);
   font-size: small;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: rgb(0 0 0 / 5%) 0 10px 20px;
   transition: 0.25s;
-  /* display: none; */
-
+  display: block;
 }
 
 .dClose {
@@ -107,7 +113,6 @@ export default {
 
 .dClose:hover {
   background-color: rgb(0, 0, 0, 0.08);
-
 }
 
 .dTop {
@@ -143,7 +148,7 @@ export default {
   border-radius: 5px;
   transition: 0.25s;
   width: 540px;
-  height: 148px;
+  /* height: 148px; */
 }
 
 .dOptBox {

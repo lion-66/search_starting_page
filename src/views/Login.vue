@@ -21,15 +21,14 @@
           <input type="password" placeholder="密码" />
           <button>登录</button>
         </div>
-        
       </div>
       <!-- 左边 -->
-      <!-- <div class="con-box left"> -->
-      <!-- <h2>欢迎来到<span>狗熊之家</span></h2> -->
-      <!-- <img src="@/assets/fengjing.jpeg" alt=""> -->
-      <!-- <p>已有账号</p> -->
-      <!-- <button id="login">去登录</button> -->
-      <!-- </div> -->
+      <div class="con-box left">
+        <h2>欢迎来到<span>狗熊之家</span></h2>
+        <!-- <img src="@/assets/fengjing.jpeg" alt=""> -->
+        <p>已有账号</p>
+        <button >去登录</button>
+      </div>
       <!-- 右边 -->
       <!-- <div class="con-box right"> -->
       <!-- <h2>欢迎来到<span>狗熊之家</span></h2> -->
@@ -89,19 +88,19 @@ export default {
     }
     .from_box {
       position: absolute;
-      // transform:translate(100px,-30px);
       width: 280px;
       height: 400px;
       border-radius: 10px;
-      border: 1px solid #000;
       top: 0px;
       left: 30px;
       display: flex;
+      
       z-index: 9991;
       align-items: center;
       justify-content: center;
       transition: .5s;
       .login-box,.register-box {
+        border-radius: 10px;
         background-color: skyblue;
         width: 100%;
         height: 100%;
@@ -143,6 +142,9 @@ export default {
         button:hover{
            background-color: #00ff11;
         }
+      }
+      .con-box{
+        color: #000;
       }
       
     }

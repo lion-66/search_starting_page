@@ -83,8 +83,8 @@ export default {
   width: 500px;
   height: 300px;
   position: absolute;
-  bottom: 27%;
-  left: 50%;
+  top: calc(50% - 250px);
+    left: calc(50% - 300px);
   padding: 10px;
   margin-left: -250px;
   border-radius: 10px;

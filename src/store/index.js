@@ -15,6 +15,7 @@ export default createStore({
     isSearch: true, //显示影藏搜索框
     isDialog: false, //隐藏常规设置
     isWallapaer: false, //隐藏更换壁纸
+    isContact:false,//隐藏联系我们
     isOff: false, //显示或者隐藏添加网站页面
     isDel: false, //显示或者隐藏删除图标
     nameOrhttps: [], //接用户添加的数据 []
@@ -40,6 +41,9 @@ export default createStore({
     },
     updateIsWallapaer(state, value) {
       state.isWallapaer = value;
+    },
+    updateIsContact(state, value) {
+      state.isContact = value;
     },
     //更新隐藏添加网站页面
     updateIsOff(state, value) {

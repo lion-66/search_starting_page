@@ -15,21 +15,22 @@
       class="img"
       :class="{ isblur: isShow }"
     />
-    <Weather v-if="weather"/>
+    <Weather v-if="weather" />
     <DateShow />
     <Search v-if="isSearch" :list="list" />
     <NavList v-else />
     <AddUrl />
-    <Footer v-if="yiyan"/>
-    <index />
+    <Footer v-if="yiyan" />
+    <Tool />
+    <Wallpaper />
+    <Contact />
+    <UserOrIndex />
 
-    <User />
     <router-view></router-view>
   </div>
 </template>
 <script>
 import { imgList, videoList } from "@/wallpaperApi";
-
 import DateShow from "@/components/DateShow";
 import Search from "@/components/Search";
 import NavList from "@/components/NavList";
@@ -37,8 +38,11 @@ import AddUrl from "@/components/AddUrl";
 import { mapState } from "vuex";
 import Footer from "@/components/Footer.vue";
 import Weather from "@/components/Weather.vue";
-import Index from "@/components/index.vue";
-import User from "@/components/User.vue";
+import UserOrIndex from "@/components/UserOrIndex.vue";
+import Tool from "@/components/tool.vue";
+import Wallpaper from "@/components/wallpaper.vue";
+import Contact from "@/components/contact.vue";
+
 export default {
   components: {
     DateShow,
@@ -47,8 +51,10 @@ export default {
     AddUrl,
     Footer,
     Weather,
-    Index,
-    User,
+    UserOrIndex,
+    Tool,
+    Wallpaper,
+    Contact,
   },
   data() {
     return {
@@ -66,7 +72,7 @@ export default {
     yiyan() {
       return this.$store.state.setContent.yiyan;
     },
-    weather(){
+    weather() {
       return this.$store.state.setContent.weather;
     },
     ...mapState(["isShow", "isSearch"]),
@@ -75,11 +81,8 @@ export default {
     this.$store.dispatch("initSetting");
   },
   mounted() {
-    //  let self = this
     window.baidu = {
       sug: (data) => {
-        //  console.log(data.s);
-        // console.log(self)
         this.list = data.s;
       },
     };
