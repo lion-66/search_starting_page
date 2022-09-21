@@ -117,11 +117,13 @@ export default {
           letter-spacing: 3px;
           font-size: 16px;
           text-indent: 8px;
+          transition: .3s;
         }
         input:focus{
           border: 2px solid #ffae00;
-          width: 210px;
-          height: 35px;
+          // width: 210px;
+          // height: 35px;
+          transform: scale(1.08);
 
         }
         h1 {

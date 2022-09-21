@@ -20,6 +20,7 @@
     <Search v-if="isSearch" :list="list" />
     <NavList v-else />
     <AddUrl />
+    <SwitchingMode/>
     <Footer v-if="yiyan" />
     <Tool />
     <Wallpaper />
@@ -36,6 +37,7 @@ import Search from "@/components/Search";
 import NavList from "@/components/NavList";
 import AddUrl from "@/components/AddUrl";
 import { mapState } from "vuex";
+import SwitchingMode from "@/components/SwitchingMode";
 import Footer from "@/components/Footer.vue";
 import Weather from "@/components/Weather.vue";
 import UserOrIndex from "@/components/UserOrIndex.vue";
@@ -49,12 +51,14 @@ export default {
     Search,
     NavList,
     AddUrl,
+    SwitchingMode,
     Footer,
     Weather,
     UserOrIndex,
     Tool,
     Wallpaper,
     Contact,
+
   },
   data() {
     return {

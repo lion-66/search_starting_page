@@ -21,6 +21,7 @@ export default createStore({
     nameOrhttps: [], //接用户添加的数据 []
     wallpaper: {}, //存储壁纸
     setContent: setContent, //引入设置内容
+    isApp:true
   },
   getters: {},
   mutations: {
@@ -71,6 +72,9 @@ export default createStore({
       local.set("wallpaper", val);
       console.log(val);
     },
+    updateIsApp(state,value){
+      state.isApp = value
+    }
   },
   actions: {
     //保存配置

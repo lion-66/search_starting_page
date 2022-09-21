@@ -1,6 +1,6 @@
 <template>
   <div id="NavList">
-    <div class="showNavList">
+    <div class="showNavList" v-if="isApp" :class="{currents:isApp}">
       <div class="appletList">
         <div v-for="(item, index) in getList" :key="item" class="contentList" @contextmenu.prevent="delet">
           <div class="contentListChild">
@@ -21,13 +21,15 @@
         </div>
       </div>
     </div>
+    <UseComponents v-else/>
   </div>
 </template>
 
 <script>
 import {mapMutations, mapState} from 'vuex';
-
+import UseComponents from '@/components/UseComponents.vue'
 export default {
+  components:{UseComponents},
   data() {
     return {
       arrList: [
@@ -72,7 +74,7 @@ export default {
     getList() {
       return [...this.arrList, ...this.nameOrhttps]
     },
-    ...mapState(['isOff', 'nameOrhttps', 'isDel'])
+    ...mapState(['isOff', 'nameOrhttps', 'isDel','isApp'])
   }
 
 }
@@ -90,6 +92,7 @@ export default {
     width: 660px;
     height: 312px;
     padding-left: 10px;
+    transition: .3s;
 
     .appletList {
       width: 660px;
@@ -189,6 +192,9 @@ export default {
     .appletList::-webkit-scrollbar {
       display: none;
     }
+  }
+  .currents{
+    transform: scale(1);
   }
 }
 </style>
