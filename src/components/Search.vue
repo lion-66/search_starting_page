@@ -14,6 +14,7 @@
                @click="showIcon"
                @focus="dianji"
                @input="searchContent"
+               @keyup.enter="handleSearch"
         >
       </div>
       <div v-show="isShow" class="right">
@@ -74,6 +75,9 @@ export default {
         window.open(`https://www.baidu.com/s?wd=${this.content}`)
       }
     },
+    handleEnterSearch() {
+      console.log(123)
+    },
     ...mapMutations(['updateIsShow', 'updateIsStop']),
 
   },
@@ -97,9 +101,9 @@ export default {
   #search {
     height: 40px;
     width: 300px;
-    background: rgba(255, 255, 255, .7);
+    //background: rgba(255, 255, 255, .7);
     display: flex;
-    padding: auto 10px;
+    padding: 0 10px;
     justify-content: space-around;
     // justify-content: space-between;
     align-items: center;
