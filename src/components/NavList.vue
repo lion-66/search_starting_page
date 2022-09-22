@@ -1,6 +1,6 @@
 <template>
   <div id="NavList">
-    <div class="showNavList" v-if="isApp" :class="{currents:isApp}">
+    <div class="showNavList" :class="{currents:isApp, openList: isApp}">
       <div class="appletList">
         <div v-for="(item, index) in getList" :key="item" class="contentList" @contextmenu.prevent="delet">
           <div class="contentListChild">
@@ -21,7 +21,7 @@
         </div>
       </div>
     </div>
-    <UseComponents v-else/>
+    <UseComponents class="showAppList" :class="{openList: !isApp}"/>
   </div>
 </template>
 
@@ -82,17 +82,32 @@ export default {
 
 <style lang="less">
 #NavList {
+  position: relative;
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
 
+  .openList {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 330px);
+    transform: scale(1)!important;
+    opacity: 1!important;
+  }
+  .showAppList {
+    transform: scale(0);
+    transition: .35s;
+    opacity: 0;
+  }
   .showNavList {
+    transform: scale(0);
+    opacity: 0;
     color: #fff;
     width: 660px;
     height: 312px;
     padding-left: 10px;
-    transition: .3s;
+    transition: .35s;
 
     .appletList {
       width: 660px;

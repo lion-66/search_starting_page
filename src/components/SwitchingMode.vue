@@ -20,7 +20,6 @@ export default {
         appPage(){
             if(this.isApp){
                 this.updateIsApp(false)
-                
             }
         },
         ...mapMutations(['updateIsApp'])
