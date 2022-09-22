@@ -11,6 +11,8 @@
             v-model:show="showPopover"
             placement="top-end"
             theme="light"
+            overlay="true"
+            overlay-class="popover-overlay"
         >
           <van-grid clickable column-num="1" style="width: 100px">
             <span
@@ -86,12 +88,16 @@ export default {
     onCopy(value) {
       this.$toast("一言复制成功(*^▽^*) !");
       // console.log("success", value);
-    },
+    }
   },
 };
 </script>
 
 <style lang="less">
+.popover-overlay {
+  opacity: 0!important;
+}
+
 .yiyan {
   display: flex;
   justify-content: center;
