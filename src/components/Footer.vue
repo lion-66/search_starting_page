@@ -9,7 +9,7 @@
       <div class="yiyan-more">
         <van-popover
             v-model:show="showPopover"
-            placement="left-start"
+            placement="top-end"
             theme="light"
         >
           <van-grid clickable column-num="1" style="width: 100px">
