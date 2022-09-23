@@ -46,12 +46,31 @@ export default {
   data() {
     return {
       content: '',
+      refreshSuggestion: null
     }
   },
   props: ['list'],
-  methods: {
-    searchContent() {
+  created() {
+    const refreshSuggestion = this.debounce(() => {
       jsonp(`http://suggestion.baidu.com/su?wd=${this.content}`, null)
+    }, 250)
+
+    this.refreshSuggestion = refreshSuggestion
+  },
+  methods: {
+    // 防抖
+    debounce(fn, delay=50) {
+      let timer = null
+      return function (...args) {
+        clearTimeout(timer)
+        timer = setTimeout(() => {
+          fn.apply(this, args)
+        }, delay)
+      }
+    },
+    searchContent() {
+      // jsonp(`http://suggestion.baidu.com/su?wd=${this.content}`, null)
+      this.refreshSuggestion()
     },
     dianji() {
       this.updateIsStop(true)
@@ -75,9 +94,9 @@ export default {
         window.open(`https://www.baidu.com/s?wd=${this.content}`)
       }
     },
-    handleEnterSearch() {
-      console.log(123)
-    },
+    // handleEnterSearch() {
+    //   console.log(123)
+    // },
     ...mapMutations(['updateIsShow', 'updateIsStop']),
 
   },
