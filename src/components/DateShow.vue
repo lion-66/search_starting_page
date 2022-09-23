@@ -1,17 +1,19 @@
 <template>
   <div class="dateShowTop">
-    <div v-show="isTime" id="dateShow" tabindex="0" @click="showSearch">
+    <!-- <div v-show="isTime" id="dateShow" tabindex="0" @click="showSearch">
             <span class="big font-thin">
                 <span>{{ nowTime }}</span>
             </span>
-    </div>
+    </div> -->
+    <clock v-show="isTime" @click="showSearch"/>
   </div>
 </template>
 
 <script>
 import {mapState, mapMutations} from 'vuex'
-
+import Clock from '@/components/Clock.vue'
 export default {
+  components:{Clock},
   data() {
     return {
       nowTime: '',

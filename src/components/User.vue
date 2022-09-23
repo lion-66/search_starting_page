@@ -1,6 +1,6 @@
 <template>
     <div id="User">
-        <router-link to="/Login">
+        <router-link to="/login">
           <div class="users">
             <svg class="icon" aria-hidden="true">
               <use xlink:href="#icon-yonghu"></use>
