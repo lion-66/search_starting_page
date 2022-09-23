@@ -1,42 +1,43 @@
 <template>
   <div id="login">
     <div class="loginList">
-      <svg class="icon" aria-hidden="true" @click="$router.go(-1)">
+      <!-- <svg class="icon" aria-hidden="true" @click="$router.go(-1)">
         <use xlink:href="#icon-zuojiantou-"></use>
-      </svg>
-      <div class="from_box" :class="{from_box2:hhh1}">
+      </svg> -->
+      <div class="from_box" :class="{ from_box2: hhh1 }">
         <!-- 注册界面 -->
-            <div class="register-box" v-if="hhh1">
-                <h1>欢迎注册</h1>
-                <!-- <input type="text" placeholder="用户名"> -->
-                <input type="email" placeholder="邮箱">
-                <input type="password" placeholder="密码">
-                <input type="password" placeholder="确认密码">
-                <button>注册</button>
-            </div>
+        <div class="register-box" v-if="hhh1">
+          <h1>欢迎注册</h1>
+          <!-- <input type="text" placeholder="用户名"> -->
+          <input type="email" placeholder="邮箱" />
+          <input type="password" placeholder="密码" />
+          <input type="password" placeholder="确认密码" />
+          <button>注册</button>
+        </div>
         <!-- 登录界面 -->
         <div class="login-box" v-else>
           <h1>欢迎登录</h1>
-          <input type="text" placeholder="邮件" />
+          <input type="text" placeholder="邮箱" />
           <input type="password" placeholder="密码" />
           <button>登录</button>
         </div>
       </div>
       <!-- 左边 -->
-      <div class="con-box left">
-        <h2>欢迎来到<span>狗熊之家</span></h2>
-        <!-- <img src="@/assets/fengjing.jpeg" alt=""> -->
-        <p>已有账号</p>
-        <button >去登录</button>
+      <div class="leftOrright">
+        <div class="con-box left">
+          <h2>欢迎来到<span>熊猫起始页</span></h2>
+          <!-- <img src="@/assets/fengjing.jpeg" alt=""> -->
+          <p>已有账号</p>
+          <button @click="hhh">去登录</button>
+        </div>
+        <!-- 右边 -->
+        <div class="con-box right">
+          <h2>欢迎来到<span>熊猫起始页</span></h2>
+          <!-- <img src="@/assets/fengjing.jpeg" alt=""> -->
+          <p>没有账号?</p>
+          <button @click="hhh">去注册</button>
+        </div>
       </div>
-      <!-- 右边 -->
-      <!-- <div class="con-box right"> -->
-      <!-- <h2>欢迎来到<span>狗熊之家</span></h2> -->
-      <!-- <img src="@/assets/fengjing.jpeg" alt=""> -->
-      <!-- <p>没有账号?</p> -->
-      <!-- <button id="register">去注册</button> -->
-      <!-- </div> -->
-      <span style="background-color:red;" @click="hhh">哈哈哈</span>
     </div>
   </div>
 </template>
@@ -46,18 +47,17 @@ export default {
   name: "Login",
   data() {
     return {
-      hhh1:false
-    }
+      hhh1: false,
+    };
   },
   methods: {
-    hhh(){
-      if(this.hhh1 == false){
-        this.hhh1 = true
-      }else{
-        this.hhh1 = false
-
+    hhh() {
+      if (this.hhh1 == false) {
+        this.hhh1 = true;
+      } else {
+        this.hhh1 = false;
       }
-    }
+    },
   },
 };
 </script>
@@ -78,8 +78,10 @@ export default {
     position: relative;
     width: 700px;
     height: 400px;
+    display: flex;
+    justify-content: center;
     color: #000;
-    background-color: #fff;
+    // background-color: #fff;
     z-index: 999;
     .icon {
       width: 30px;
@@ -92,14 +94,16 @@ export default {
       height: 400px;
       border-radius: 10px;
       top: 0px;
-      left: 30px;
+      left: 36px;
       display: flex;
-      
+
       z-index: 9991;
       align-items: center;
       justify-content: center;
-      transition: .5s;
-      .login-box,.register-box {
+      transition: 0.5s;
+      .login-box,
+      .register-box {
+        
         border-radius: 10px;
         background-color: skyblue;
         width: 100%;
@@ -117,14 +121,13 @@ export default {
           letter-spacing: 3px;
           font-size: 16px;
           text-indent: 8px;
-          transition: .3s;
+          transition: 0.3s;
         }
-        input:focus{
+        input:focus {
           border: 2px solid #ffae00;
           // width: 210px;
           // height: 35px;
           transform: scale(1.08);
-
         }
         h1 {
           text-align: center;
@@ -139,23 +142,53 @@ export default {
           background-color: #ffae00;
           border-radius: 20px;
           text-align: center;
-          transition: .3s;
+          transition: 0.3s;
         }
-        button:hover{
-           background-color: #00ff11;
+        button:hover {
+          background-color: #00ff11;
         }
       }
-      .con-box{
+      .con-box {
         color: #000;
       }
-      
     }
-     
-        .from_box2{
-           transform:translate(350px)
+    .from_box2 {
+      transform: translate(350px);
+    }
+    .leftOrright {
+      width: 628px;
+      height: 100%;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      // background-color: orchid;
+      background-color: #fff;
+      .con-box {
+        width: 280px;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        span{
+          font-size: 30px;
+          // font-weight: 600;
         }
-     
-    
+        // background-color: #ffae00;
+      }
+         button {
+          width: 100px;
+          height: 30px;
+          background-color: #ffae00;
+          border-radius: 20px;
+          text-align: center;
+          transition: 0.3s;
+        }
+        button:hover {
+          background-color: #00ff11;
+        }
+    }
   }
 }
 </style>
