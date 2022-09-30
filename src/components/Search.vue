@@ -223,7 +223,10 @@ export default {
     background: rgba(255, 255, 255, .7);
     color: #000;
     cursor: pointer;
-
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: normal;
     .listContent {
       height: 20px;
       width: 100%;

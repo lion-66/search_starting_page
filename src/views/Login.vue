@@ -94,14 +94,19 @@ export default {
     }
   },
   mounted() {
-        
+        let fullWidth =  document.documentElement.clientWidth;
+         if(fullWidth <= 700){
+            this.isLoginPage = false
+          }else{
+            this.isLoginPage = true
+          }
         window.onresize = ()=>{
           let fullWidth =  document.documentElement.clientWidth;
-        if(fullWidth <= 700){
-          this.isLoginPage = false
-        }else{
-          this.isLoginPage = true
-        }
+          if(fullWidth <= 700){
+            this.isLoginPage = false
+          }else{
+            this.isLoginPage = true
+          }
         }
         // console.log(fullWidth);
         // console.log(11);
