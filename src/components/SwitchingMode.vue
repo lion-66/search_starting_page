@@ -28,7 +28,7 @@ export default {
         ...mapState(['isSearch','isApp'])
     },
     mounted() {
-        console.log(this.isApp);
+        // console.log(this.isApp);
     },
 
 }

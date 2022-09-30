@@ -1,20 +1,14 @@
 <template>
-  <div id="login">
+  <div id="login" v-show="isLoginPage">
     <div class="loginList">
-      <!-- <svg class="icon" aria-hidden="true" @click="$router.go(-1)">
-        <use xlink:href="#icon-zuojiantou-"></use>
-      </svg> -->
       <div class="from_box" :class="{ from_box2: hhh1 }">
-        <!-- 注册界面 -->
         <div class="register-box" v-if="hhh1">
           <h1>欢迎注册</h1>
-          <!-- <input type="text" placeholder="用户名"> -->
           <input type="email" placeholder="邮箱" />
           <input type="password" placeholder="密码" />
           <input type="password" placeholder="确认密码" />
           <button>注册</button>
         </div>
-        <!-- 登录界面 -->
         <div class="login-box" v-else>
           <h1>欢迎登录</h1>
           <input type="text" placeholder="邮箱" />
@@ -22,23 +16,45 @@
           <button>登录</button>
         </div>
       </div>
-      <!-- 左边 -->
       <div class="leftOrright">
         <div class="con-box left">
           <h2>欢迎来到<span>熊猫起始页</span></h2>
-          <!-- <img src="@/assets/fengjing.jpeg" alt=""> -->
           <p>已有账号</p>
           <button @click="hhh">去登录</button>
         </div>
-        <!-- 右边 -->
         <div class="con-box right">
           <h2>欢迎来到<span>熊猫起始页</span></h2>
-          <!-- <img src="@/assets/fengjing.jpeg" alt=""> -->
           <p>没有账号?</p>
           <button @click="hhh">去注册</button>
         </div>
       </div>
     </div>
+  </div>
+  <div class="loginOrUp" v-show="!isLoginPage">
+    <!-- <div class="masked"> -->
+      <div class="loginPage">
+        <div class="loginTop">
+          <button class="leftBtn" @click="isSwitchPage1">注册</button>
+          <button class="leftBtn" @click="isSwitchPage2">登陆</button>
+        </div>
+        <div class="loginBottom">
+          <div class="register-box" v-show="isSwitch">
+            <h1>欢迎注册</h1>
+            <input type="email" placeholder="邮箱" />
+            <input type="password" placeholder="密码" />
+            <input type="password" placeholder="确认密码" />
+            <button>注册</button>
+          </div>
+          <div class="login-box" v-show="!isSwitch">
+            <h1>欢迎登录</h1>
+            <input type="text" placeholder="邮箱" />
+            <input type="password" placeholder="密码" />
+            <button>登录</button>
+          </div>
+
+        </div>
+    </div>
+    <!-- </div> -->
   </div>
 </template>
 
@@ -48,6 +64,8 @@ export default {
   data() {
     return {
       hhh1: false,
+      isLoginPage:false,
+      isSwitch:true
     };
   },
   methods: {
@@ -58,6 +76,36 @@ export default {
         this.hhh1 = false;
       }
     },
+    isSwitchPage1(){
+      if(this.isSwitch){
+        this.isSwitch = true
+      }else{
+        this.isSwitch = true
+
+      }
+    },
+    isSwitchPage2(){
+      if(this.isSwitch = true){
+        this.isSwitch = false
+      }else{
+        this.isSwitch = false
+
+      }
+    }
+  },
+  mounted() {
+        
+        window.onresize = ()=>{
+          let fullWidth =  document.documentElement.clientWidth;
+        if(fullWidth <= 700){
+          this.isLoginPage = false
+        }else{
+          this.isLoginPage = true
+        }
+        }
+        // console.log(fullWidth);
+        // console.log(11);
+        // console.log(this.isLoginPage);
   },
 };
 </script>
@@ -189,6 +237,89 @@ export default {
           background-color: #00ff11;
         }
     }
+  }
+}
+.loginOrUp{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+  .loginPage{
+      width: 280px;
+      height: 400px;
+      border-radius: 10px;
+      top: 0px;
+      left: 36px;
+      background-color: skyblue;
+      padding: 10px;
+      .loginTop{
+          width: 100%;
+          height: 50px;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          .leftBtn{
+            width: 100px;
+            height: 30px;
+            background-color: #00ff11;
+            border-radius: 20px;
+          }
+      }
+      .loginBottom{
+        width: 100%;
+        height: 330px;
+        padding: 20px 0;
+        .register-box,.login-box{
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          // background-color: orange;
+          input {
+          width: 200px;
+          height: 30px;
+          border-radius: 20px;
+          padding: 8px 0;
+          margin: 10px 0;
+          letter-spacing: 3px;
+          font-size: 16px;
+          text-indent: 8px;
+          transition: 0.3s;
+        }
+        input:focus {
+          border: 2px solid #ffae00;
+          // width: 210px;
+          // height: 35px;
+          transform: scale(1.08);
+        }
+        h1 {
+          text-align: center;
+          color: #000;
+          margin-bottom: 25px;
+          font-size: 20px;
+          letter-spacing: 5px;
+        }
+        button {
+          width: 100px;
+          height: 30px;
+          background-color: #ffae00;
+          border-radius: 20px;
+          text-align: center;
+          transition: 0.3s;
+        }
+        button:hover {
+          background-color: #00ff11;
+        }
+        }
+      }
   }
 }
 </style>
